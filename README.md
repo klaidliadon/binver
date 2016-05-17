@@ -1,6 +1,6 @@
 # Binver
 
-Binary version command helper.
+Binver is a binary version command helper. It creates a `-v` or `--version` flag in your binary that prints contents of a version file, the repo revision and the build time.
 
 ## Usage
 
