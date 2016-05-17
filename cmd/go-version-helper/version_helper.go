@@ -15,9 +15,9 @@ if [ ! -d ".git" ]; then
 	 exit 1
 fi
 go build -ldflags "\
--X binver.version=$(cat ` + vToken + `) \
--X binver.buildTime=$(date -u '+%Y-%m-%dT%H:%M:%S') \
--X binver.revison=$(git rev-parse HEAD)\
+-X github.com/klaidliadon/go-version.version=$(cat ` + vToken + `) \
+-X github.com/klaidliadon/go-version.buildTime=$(date -u '+%Y-%m-%dT%H:%M:%S') \
+-X github.com/klaidliadon/go-version.revison=$(git rev-parse HEAD)\
 " `
 	vToken = "[version]"
 )
@@ -40,7 +40,7 @@ func main() {
 		}
 	}
 	txt := strings.Replace(contents, vToken, *fVersionFile, 1) + *fPackageName
-	if err := ioutil.WriteFile(*fBuildFile, []byte(txt), 0644); err != nil {
+	if err := ioutil.WriteFile(*fBuildFile, []byte(txt), 0755); err != nil {
 		log.Fatalf("Cannot write build file %q: %s", *fBuildFile, err)
 	}
 }
