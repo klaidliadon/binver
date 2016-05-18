@@ -10,8 +10,8 @@ The command `go-version-helper` does the following:
 - Sets the contents of the create file to the current version (default `v0.1`)
 - Creates a build file (default `build.sh`) for the binary package (default `.`)
 
-In your main file you have just to import the package `github.com/klaidliadon/binver` 
-and call the function `binver.Version("YourAppName")`.
+In your main file you have just to import the package `github.com/klaidliadon/go-version` 
+and wrap your main function around a `version.App`.
 
 ```go
 package main
@@ -31,3 +31,4 @@ func main() {
 }
 
 ```
+
