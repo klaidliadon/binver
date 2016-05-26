@@ -4,7 +4,9 @@ Go-Version is a binary version command helper. It creates a `-v` or `--version` 
 
 ## Usage
 
-The command `go-version-helper` does the following:
+The command `go-version-helper` creates a valid build file.
+
+In order, it does the following:
 
 - Creates a version file (default `.version`) if it does not exists 
 - Sets the contents of the create file to the current version (default `v0.1`)
@@ -32,3 +34,4 @@ func main() {
 
 ```
 
+To change version number you just have to edit the **version file**.
